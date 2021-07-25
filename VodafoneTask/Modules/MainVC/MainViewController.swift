@@ -49,19 +49,20 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = viewmodel.photos.count + viewmodel.numberOfAds
+        let count = viewmodel.photos.count //+ viewmodel.numberOfAds
         return viewmodel.hasMore ? count + 1 : count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == viewmodel.photos.count + viewmodel.numberOfAds {
+        if indexPath.row == viewmodel.photos.count {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoadMoreTableViewCell.self),for: indexPath) as? LoadMoreTableViewCell else { return UITableViewCell() }
             return cell
-        }else if indexPath.row % 5 == 0{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdTableViewCell.self),for: indexPath) as? AdTableViewCell else { return UITableViewCell() }
-            //cell.configure(with: viewmodel.photos[indexPath.row])
-            return cell
+//        }else if indexPath.row % 5 == 0, indexPath.row != 0{
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdTableViewCell.self),for: indexPath) as? AdTableViewCell else { return UITableViewCell() }
+//            //cell.configure(with: viewmodel.photos[indexPath.row])
+//            return cell
         }else {
+            //let index = indexPath.row - (indexPath.row % 5)
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PhotoTableViewCell.self),for: indexPath) as? PhotoTableViewCell else { return UITableViewCell() }
             cell.configure(with: viewmodel.photos[indexPath.row])
             return cell
