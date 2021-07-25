@@ -12,9 +12,4 @@ target 'VodafoneTask' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'VodafoneTaskUITests' do
-    # Pods for testing
-  end
-
 end

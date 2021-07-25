@@ -1,5 +1,5 @@
 //
-//  VodafoneTask-Bridging-Header.h
+//  RepositoryParser.m
 //  VodafoneTask
 //
 //  Created by Mostafa Samir on 25/07/2021.
@@ -9,12 +9,12 @@
 
 @implementation RepositoryParser
 
-- (void)parseRepositories:(id)data withSuccess:(void (^)(NSArray<RepositoryModel *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion {
+- (void)parseRepositories:(id)data withSuccess:(void (^)(NSArray<Photo *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion {
     
     NSArray *fetchedArr = data;
-    NSMutableArray<RepositoryModel *> *repos = [[NSMutableArray alloc] init];
+    NSMutableArray<Photo *> *repos = [[NSMutableArray alloc] init];
     for (int i = 0 ; i < fetchedArr.count ; i++ ){
-        RepositoryModel *repo = [[RepositoryModel alloc] init];
+        Photo *repo = [[Photo alloc] init];
         repo.photoId = [fetchedArr objectAtIndex:i][@"id"];
         repo.author = [fetchedArr objectAtIndex:i][@"author"];
         repo.width = [fetchedArr objectAtIndex:i][@"width"];

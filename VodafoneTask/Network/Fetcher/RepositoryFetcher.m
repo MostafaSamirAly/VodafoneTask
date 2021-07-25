@@ -1,5 +1,5 @@
 //
-//  VodafoneTask-Bridging-Header.h
+//  RepositoryFetcher.m
 //  VodafoneTask
 //
 //  Created by Mostafa Samir on 25/07/2021.
@@ -16,7 +16,7 @@
     return self;
 }
 
-- (void)fetchAt:(int) page success:(void (^)(NSArray<RepositoryModel *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion{
+- (void)fetchAt:(int) page success:(void (^)(NSArray<Photo *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion{
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
