@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		56C3496A26ADED6A0016A783 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C3496826ADED6A0016A783 /* LaunchScreen.storyboard */; };
 		56C3497526ADED6B0016A783 /* VodafoneTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3497426ADED6B0016A783 /* VodafoneTaskTests.swift */; };
 		56C3498026ADED6B0016A783 /* VodafoneTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3497F26ADED6B0016A783 /* VodafoneTaskUITests.swift */; };
+		56C3499726ADEDC00016A783 /* RepositoryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3498F26ADEDC00016A783 /* RepositoryFetcher.m */; };
+		56C3499826ADEDC00016A783 /* RepositoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3499326ADEDC00016A783 /* RepositoryParser.m */; };
+		56C3499D26ADEE240016A783 /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3499C26ADEE240016A783 /* RepositoryModel.m */; };
+		644DD567EC0492CAFBB719A7 /* Pods_VodafoneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */; };
+		C82F7734D364CDECF8AD067B /* Pods_VodafoneTask_VodafoneTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35576C56BC4E35361A3A8B69 /* Pods_VodafoneTask_VodafoneTaskUITests.framework */; };
+		CFF94D34812A60564577A706 /* Pods_VodafoneTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A6159992C8848F3B31D437D /* Pods-VodafoneTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTaskTests/Pods-VodafoneTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		26F8B37D07A2307C6BC65DFB /* Pods-VodafoneTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTaskTests.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTaskTests/Pods-VodafoneTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		35576C56BC4E35361A3A8B69 /* Pods_VodafoneTask_VodafoneTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTask_VodafoneTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B553A32F5356FF7B0F9858 /* Pods-VodafoneTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask.release.xcconfig"; sourceTree = "<group>"; };
+		526B365F9B9729A3BF167A81 /* Pods-VodafoneTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask.debug.xcconfig"; sourceTree = "<group>"; };
 		56C3495726ADED690016A783 /* VodafoneTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VodafoneTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C3495A26ADED690016A783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C3495C26ADED690016A783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +63,18 @@
 		56C3497B26ADED6B0016A783 /* VodafoneTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VodafoneTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C3497F26ADED6B0016A783 /* VodafoneTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VodafoneTaskUITests.swift; sourceTree = "<group>"; };
 		56C3498126ADED6B0016A783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56C3498F26ADEDC00016A783 /* RepositoryFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryFetcher.m; sourceTree = "<group>"; };
+		56C3499026ADEDC00016A783 /* RepositoryFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryFetcher.h; sourceTree = "<group>"; };
+		56C3499226ADEDC00016A783 /* RepositoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryParser.h; sourceTree = "<group>"; };
+		56C3499326ADEDC00016A783 /* RepositoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryParser.m; sourceTree = "<group>"; };
+		56C3499526ADEDC00016A783 /* RepositoryFetcherProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryFetcherProtocol.h; sourceTree = "<group>"; };
+		56C3499626ADEDC00016A783 /* RepositoryParserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryParserProtocol.h; sourceTree = "<group>"; };
+		56C3499B26ADEE240016A783 /* RepositoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryModel.h; sourceTree = "<group>"; };
+		56C3499C26ADEE240016A783 /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
+		56C3499F26ADF58C0016A783 /* VodafoneTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VodafoneTask-Bridging-Header.h"; sourceTree = "<group>"; };
+		58F2BC7EADFADFBA5FD5E03C /* Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4121B5CD8769F0B4BDB8579 /* Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644DD567EC0492CAFBB719A7 /* Pods_VodafoneTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF94D34812A60564577A706 /* Pods_VodafoneTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +98,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82F7734D364CDECF8AD067B /* Pods_VodafoneTask_VodafoneTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4929F262DDC20F4471A5783E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */,
+				35576C56BC4E35361A3A8B69 /* Pods_VodafoneTask_VodafoneTaskUITests.framework */,
+				C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		56C3494E26ADED690016A783 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +122,8 @@
 				56C3497326ADED6B0016A783 /* VodafoneTaskTests */,
 				56C3497E26ADED6B0016A783 /* VodafoneTaskUITests */,
 				56C3495826ADED690016A783 /* Products */,
+				AB8EC619CC0F71D4ABFEE9FC /* Pods */,
+				4929F262DDC20F4471A5783E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +140,7 @@
 		56C3495926ADED690016A783 /* VodafoneTask */ = {
 			isa = PBXGroup;
 			children = (
+				56C3498D26ADEDC00016A783 /* Network */,
 				56C3495A26ADED690016A783 /* AppDelegate.swift */,
 				56C3495C26ADED690016A783 /* SceneDelegate.swift */,
 				56C3495E26ADED690016A783 /* ViewController.swift */,
@@ -109,6 +149,7 @@
 				56C3496826ADED6A0016A783 /* LaunchScreen.storyboard */,
 				56C3496B26ADED6A0016A783 /* Info.plist */,
 				56C3496326ADED690016A783 /* VodafoneTask.xcdatamodeld */,
+				56C3499F26ADF58C0016A783 /* VodafoneTask-Bridging-Header.h */,
 			);
 			path = VodafoneTask;
 			sourceTree = "<group>";
@@ -131,6 +172,66 @@
 			path = VodafoneTaskUITests;
 			sourceTree = "<group>";
 		};
+		56C3498D26ADEDC00016A783 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				56C3498E26ADEDC00016A783 /* Fetcher */,
+				56C3499126ADEDC00016A783 /* Parser */,
+				56C3499426ADEDC00016A783 /* Protocols */,
+				56C3499A26ADEE240016A783 /* RepositoryModel */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		56C3498E26ADEDC00016A783 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				56C3498F26ADEDC00016A783 /* RepositoryFetcher.m */,
+				56C3499026ADEDC00016A783 /* RepositoryFetcher.h */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		56C3499126ADEDC00016A783 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				56C3499226ADEDC00016A783 /* RepositoryParser.h */,
+				56C3499326ADEDC00016A783 /* RepositoryParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		56C3499426ADEDC00016A783 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				56C3499526ADEDC00016A783 /* RepositoryFetcherProtocol.h */,
+				56C3499626ADEDC00016A783 /* RepositoryParserProtocol.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		56C3499A26ADEE240016A783 /* RepositoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				56C3499B26ADEE240016A783 /* RepositoryModel.h */,
+				56C3499C26ADEE240016A783 /* RepositoryModel.m */,
+			);
+			path = RepositoryModel;
+			sourceTree = "<group>";
+		};
+		AB8EC619CC0F71D4ABFEE9FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				526B365F9B9729A3BF167A81 /* Pods-VodafoneTask.debug.xcconfig */,
+				49B553A32F5356FF7B0F9858 /* Pods-VodafoneTask.release.xcconfig */,
+				E4121B5CD8769F0B4BDB8579 /* Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig */,
+				58F2BC7EADFADFBA5FD5E03C /* Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig */,
+				1A6159992C8848F3B31D437D /* Pods-VodafoneTaskTests.debug.xcconfig */,
+				26F8B37D07A2307C6BC65DFB /* Pods-VodafoneTaskTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56C3498426ADED6B0016A783 /* Build configuration list for PBXNativeTarget "VodafoneTask" */;
 			buildPhases = (
+				63BBA670C20C16D3E34B2E53 /* [CP] Check Pods Manifest.lock */,
 				56C3495326ADED690016A783 /* Sources */,
 				56C3495426ADED690016A783 /* Frameworks */,
 				56C3495526ADED690016A783 /* Resources */,
+				E462CA79F5DAE740B540ABBA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56C3498726ADED6B0016A783 /* Build configuration list for PBXNativeTarget "VodafoneTaskTests" */;
 			buildPhases = (
+				670CF269E4231AEAF32EFB8C /* [CP] Check Pods Manifest.lock */,
 				56C3496C26ADED6B0016A783 /* Sources */,
 				56C3496D26ADED6B0016A783 /* Frameworks */,
 				56C3496E26ADED6B0016A783 /* Resources */,
@@ -173,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56C3498A26ADED6B0016A783 /* Build configuration list for PBXNativeTarget "VodafoneTaskUITests" */;
 			buildPhases = (
+				4D8539CF1719F57DBC4DFA01 /* [CP] Check Pods Manifest.lock */,
 				56C3497726ADED6B0016A783 /* Sources */,
 				56C3497826ADED6B0016A783 /* Frameworks */,
 				56C3497926ADED6B0016A783 /* Resources */,
+				54AEDBA3D3260C5B315E65D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,15 +362,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D8539CF1719F57DBC4DFA01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VodafoneTask-VodafoneTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54AEDBA3D3260C5B315E65D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63BBA670C20C16D3E34B2E53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VodafoneTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		670CF269E4231AEAF32EFB8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VodafoneTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E462CA79F5DAE740B540ABBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56C3495326ADED690016A783 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C3499826ADEDC00016A783 /* RepositoryParser.m in Sources */,
 				56C3495F26ADED690016A783 /* ViewController.swift in Sources */,
 				56C3495B26ADED690016A783 /* AppDelegate.swift in Sources */,
 				56C3496526ADED690016A783 /* VodafoneTask.xcdatamodeld in Sources */,
 				56C3495D26ADED690016A783 /* SceneDelegate.swift in Sources */,
+				56C3499726ADEDC00016A783 /* RepositoryFetcher.m in Sources */,
+				56C3499D26ADEE240016A783 /* RepositoryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,10 +649,12 @@
 		};
 		56C3498526ADED6B0016A783 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 526B365F9B9729A3BF167A81 /* Pods-VodafoneTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2A542S6399;
 				INFOPLIST_FILE = VodafoneTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,6 +662,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.VodafoneTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VodafoneTask/VodafoneTask-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,10 +670,12 @@
 		};
 		56C3498626ADED6B0016A783 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B553A32F5356FF7B0F9858 /* Pods-VodafoneTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2A542S6399;
 				INFOPLIST_FILE = VodafoneTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,6 +683,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mostafa.VodafoneTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VodafoneTask/VodafoneTask-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -473,6 +691,7 @@
 		};
 		56C3498826ADED6B0016A783 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A6159992C8848F3B31D437D /* Pods-VodafoneTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +713,7 @@
 		};
 		56C3498926ADED6B0016A783 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F8B37D07A2307C6BC65DFB /* Pods-VodafoneTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +735,7 @@
 		};
 		56C3498B26ADED6B0016A783 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4121B5CD8769F0B4BDB8579 /* Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +755,7 @@
 		};
 		56C3498C26ADED6B0016A783 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58F2BC7EADFADFBA5FD5E03C /* Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
