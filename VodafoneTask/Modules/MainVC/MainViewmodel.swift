@@ -17,7 +17,7 @@ class MainViewmodel: NSObject {
     }
     private(set) var numberOfAds = 0
     private var page = 1
-    private(set) var hasMore = true
+    private(set) var hasMore = false
     
     var successCompletion:(()->())?
     var errorCompletion:((Error)->())?
@@ -45,4 +45,11 @@ class MainViewmodel: NSObject {
         }
     }
     
+    func isAd(at indexPath:IndexPath) -> Bool {
+        return (indexPath.row + 1) % 6 == 0 && indexPath.row != 0
+    }
+    
+    func getPhoto(at indexPath:IndexPath) -> Photo {
+        return photos[indexPath.row - (indexPath.row / 6)]
+    }
 }

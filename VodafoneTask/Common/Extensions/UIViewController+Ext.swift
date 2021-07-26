@@ -16,4 +16,8 @@ extension UIViewController {
             self?.present(alert, animated: true)
         }
     }
+    
+    func pushCrossDissolve(viewController: UIViewController) {
+        navigationController?.fadeTo(viewController)
+    }
 }

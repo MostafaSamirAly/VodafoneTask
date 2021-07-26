@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-bH-gkR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-bH-gkR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -38,6 +38,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNK-dP-bfz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1472.4637681159422" y="14.732142857142856"/>
+        </scene>
+        <!--InfoVC-->
+        <scene sceneID="p0L-jQ-Yip">
+            <objects>
+                <viewController storyboardIdentifier="InfoVC" id="kBK-XQ-roZ" customClass="InfoVC" customModule="VodafoneTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pgH-5f-PBe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MB5-k3-Gpo">
+                                <rect key="frame" x="64" y="341" width="286" height="214.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MB5-k3-Gpo" secondAttribute="height" multiplier="1:0.75" id="fC8-ZP-J0d"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LYo-49-dd8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MB5-k3-Gpo" firstAttribute="leading" secondItem="LYo-49-dd8" secondAttribute="leading" constant="64" id="5xJ-iX-6nd"/>
+                            <constraint firstItem="MB5-k3-Gpo" firstAttribute="centerY" secondItem="pgH-5f-PBe" secondAttribute="centerY" id="Czr-dt-yfE"/>
+                            <constraint firstItem="LYo-49-dd8" firstAttribute="trailing" secondItem="MB5-k3-Gpo" secondAttribute="trailing" constant="64" id="h1v-Zq-qzS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="MB5-k3-Gpo" id="rnM-6w-dEQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uV6-UC-LAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OQN-8v-CPQ">
