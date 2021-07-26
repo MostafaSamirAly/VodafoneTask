@@ -21,6 +21,9 @@ class MainViewController: DataLoadingVC {
         viewmodel.errorCompletion = { [weak self] error in
             self?.dismissLoadingView()
             self?.showAlert(message: error.localizedDescription)
+            DispatchQueue.main.async {
+                self?.photosTableView.reloadData()
+            }
         }
         
         viewmodel.successCompletion = { [weak self] in
@@ -46,7 +49,7 @@ class MainViewController: DataLoadingVC {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !viewmodel.isAd(at: indexPath),
-           indexPath.row != (viewmodel.photos.count + viewmodel.numberOfAds) {
+           indexPath.row != (viewmodel.getLastIndex()) {
             if let infoVC = storyboard?.instantiateViewController(identifier: "InfoVC") as? InfoVC {
                 infoVC.viewmodel.photo = viewmodel.getPhoto(at: indexPath)
                 pushCrossDissolve(viewController: infoVC)
@@ -58,12 +61,11 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = viewmodel.photos.count + viewmodel.numberOfAds
-        return viewmodel.hasMore ? count + 1 : count
+        return viewmodel.getTotalCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == viewmodel.photos.count + viewmodel.numberOfAds {
+        if indexPath.row == viewmodel.getLastIndex() {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoadMoreTableViewCell.self),for: indexPath) as? LoadMoreTableViewCell else { return UITableViewCell() }
             return cell
         }else {
