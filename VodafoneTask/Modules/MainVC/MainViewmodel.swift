@@ -10,9 +10,13 @@ import Foundation
 class MainViewmodel: NSObject {
     private let parser:RepositoryParser
     private let fetcher:RepositoryFetcher
+    var cashedPhotos:[Photo] {
+        return CoreDataHelper.shared.getMoviesFromCoreData()
+    }
     private(set) var photos = [Photo]() {
         didSet {
             numberOfAds = photos.count / 5
+            updateCashedMovies()
         }
     }
     private(set) var numberOfAds = 0
@@ -51,5 +55,11 @@ class MainViewmodel: NSObject {
     
     func getPhoto(at indexPath:IndexPath) -> Photo {
         return photos[indexPath.row - (indexPath.row / 6)]
+    }
+    
+    private func updateCashedMovies() {
+        if cashedPhotos.count <  20 {
+            CoreDataHelper.shared.insert(photos: photos.suffix(20))
+        }
     }
 }

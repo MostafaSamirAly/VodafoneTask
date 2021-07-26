@@ -10,6 +10,7 @@
 		5657C58F26AF33DF000B0602 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */; };
 		5657C59526AF344F000B0602 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59426AF344F000B0602 /* InfoVC.swift */; };
 		5657C59726AF346E000B0602 /* InfoViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59626AF346E000B0602 /* InfoViewmodel.swift */; };
+		5657C59A26AF424D000B0602 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59926AF424D000B0602 /* CoreDataManager.swift */; };
 		56C3495B26ADED690016A783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3495A26ADED690016A783 /* AppDelegate.swift */; };
 		56C3495D26ADED690016A783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3495C26ADED690016A783 /* SceneDelegate.swift */; };
 		56C3496226ADED690016A783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C3496026ADED690016A783 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		5657C59426AF344F000B0602 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		5657C59626AF346E000B0602 /* InfoViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewmodel.swift; sourceTree = "<group>"; };
+		5657C59926AF424D000B0602 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56C3495726ADED690016A783 /* VodafoneTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VodafoneTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C3495A26ADED690016A783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C3495C26ADED690016A783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 				C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5657C59826AF415B000B0602 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5657C59926AF424D000B0602 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		56C3494E26ADED690016A783 = {
@@ -264,6 +274,7 @@
 		56C349A526AE07E20016A783 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5657C59826AF415B000B0602 /* CoreData */,
 				56C349B726AE0F980016A783 /* Extensions */,
 				56C349B426AE0B890016A783 /* CustomUI */,
 			);
@@ -513,6 +524,7 @@
 				56C349BB26AE10DF0016A783 /* UIImageView+Ext.swift in Sources */,
 				56C3499826ADEDC00016A783 /* RepositoryParser.m in Sources */,
 				5657C58F26AF33DF000B0602 /* UINavigationController+Ext.swift in Sources */,
+				5657C59A26AF424D000B0602 /* CoreDataManager.swift in Sources */,
 				56C3495B26ADED690016A783 /* AppDelegate.swift in Sources */,
 				56C3496526ADED690016A783 /* VodafoneTask.xcdatamodeld in Sources */,
 				56C349BF26AE11FA0016A783 /* DataLoadingVC.swift in Sources */,

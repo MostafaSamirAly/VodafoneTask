@@ -10,11 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Photo : NSObject
-@property NSNumber  *photoId;
 @property NSString  *author;
-@property NSNumber  *width;
-@property NSNumber  *height;
-@property NSString  *url;
 @property NSString  *downloadUrl;
 
 @end
