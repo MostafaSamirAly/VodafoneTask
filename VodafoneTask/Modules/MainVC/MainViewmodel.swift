@@ -74,11 +74,11 @@ class MainViewmodel: NSObject {
         return hasMore ? count + 1 : count
     }
     
-    func isAd(at indexPath:IndexPath) -> Bool {
+    func isAd(at indexPath: IndexPath) -> Bool {
         return (indexPath.row + 1) % 6 == 0 && indexPath.row != 0
     }
     
-    func getPhoto(at indexPath:IndexPath) -> Photo {
+    func getPhoto(at indexPath: IndexPath) -> Photo {
         switch photosDataSource {
         case .network:
             return photos[indexPath.row - (indexPath.row / 6)]

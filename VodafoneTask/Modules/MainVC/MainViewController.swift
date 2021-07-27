@@ -55,7 +55,6 @@ extension MainViewController: UITableViewDelegate {
                 pushCrossDissolve(viewController: infoVC)
             }
         }
-        
     }
 }
 
@@ -78,7 +77,6 @@ extension MainViewController: UITableViewDataSource {
                 return cell
             }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

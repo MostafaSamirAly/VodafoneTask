@@ -10,24 +10,52 @@ import XCTest
 
 class VodafoneTaskTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var fetcher: RepositoryFetcher!
+    var parser: RepositoryParser!
+    var data: Any!
+    
+    override func setUp() {
+        parser = RepositoryParser()
+        fetcher = RepositoryFetcher(parser: parser)
+        let testBundle = Bundle(for: type(of: self))
+        let path = testBundle.path(forResource: "MockApi", ofType: "json")
+        let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path!), options: .alwaysMapped)
+        data = try? JSONSerialization.jsonObject(with: jsonData!, options: .allowFragments) as! NSArray
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testFetcher() {
+        let promise = expectation(description: "Fetcher is fetching data")
+        fetcher.fetch(at: 1,success: { (photos) in
+            if photos.count == 10{
+                XCTAssertEqual(photos[0].author, "Alejandro Escamilla")
+                promise.fulfill()
+            }else{
+                XCTFail("Response is not as Expected")
+                promise.fulfill()
+            }
+        }) { error in
+            XCTFail("Responded with error: \(error.localizedDescription)")
+            promise.fulfill()
         }
+        wait(for: [promise], timeout: 5)
+    }
+    
+    func testParser() {
+        let promise = expectation(description: "Parsing Mock Data")
+        parser.parseRepositories(data!, withSuccess: { (photos) in
+            if photos.count == 10 {
+                XCTAssertEqual(photos[0].author, "Alejandro Escamilla")
+                promise.fulfill()
+            }else{
+                XCTFail("parsed is not as Expected")
+                promise.fulfill()
+            }
+        }) { (error) in
+            XCTFail("parsing  error: \(error.localizedDescription)")
+            promise.fulfill()
+        }
+        wait(for: [promise], timeout: 5)
+        
     }
 
 }

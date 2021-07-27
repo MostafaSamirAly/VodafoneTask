@@ -17,11 +17,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ih5-mG-3uD">
-                        <rect key="frame" x="150" y="12" width="20" height="20"/>
+                        <rect key="frame" x="150" y="8" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="5fA-Wt-U4C"/>
+                        </constraints>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ih5-mG-3uD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5Yh-qH-nQw"/>
+                    <constraint firstAttribute="bottom" secondItem="ih5-mG-3uD" secondAttribute="bottom" constant="8" id="TOn-RY-RDZ"/>
+                    <constraint firstItem="ih5-mG-3uD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="VSS-Gr-KUI"/>
                     <constraint firstItem="ih5-mG-3uD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Yfw-U8-GY8"/>
                 </constraints>
             </tableViewCellContentView>

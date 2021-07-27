@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) id<RepositoryParserProtocol> parser;
 
-- (instancetype)initWithParser:(id<RepositoryParserProtocol>)parser;
+- (instancetype)initWithParser:(id<RepositoryParserProtocol>) parser;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,6 +33,7 @@
 		56C349C826AE1ABD0016A783 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349C626AE1ABD0016A783 /* LoadMoreTableViewCell.xib */; };
 		56C349CB26AE1AE20016A783 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349C926AE1AE20016A783 /* AdTableViewCell.swift */; };
 		56C349CC26AE1AE20016A783 /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */; };
+		56EC32FD26B09E5B00C6E567 /* MockApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 56EC32FC26B09E5B00C6E567 /* MockApi.json */; };
 		644DD567EC0492CAFBB719A7 /* Pods_VodafoneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */; };
 		CFF94D34812A60564577A706 /* Pods_VodafoneTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		56C349C626AE1ABD0016A783 /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
 		56C349C926AE1AE20016A783 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
+		56EC32FC26B09E5B00C6E567 /* MockApi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockApi.json; sourceTree = "<group>"; };
 		58F2BC7EADFADFBA5FD5E03C /* Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4121B5CD8769F0B4BDB8579 /* Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		56C3497326ADED6B0016A783 /* VodafoneTaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				56EC32FC26B09E5B00C6E567 /* MockApi.json */,
 				56C3497426ADED6B0016A783 /* VodafoneTaskTests.swift */,
 				56C3497626ADED6B0016A783 /* Info.plist */,
 			);
@@ -447,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EC32FD26B09E5B00C6E567 /* MockApi.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
