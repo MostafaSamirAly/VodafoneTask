@@ -25,7 +25,12 @@ class InfoVC: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        self.view.backgroundColor = photoImageView.image?.averageColor
+        do {
+            self.view.backgroundColor = try photoImageView.image?.dominantColors().first
+        } catch {
+            showAlert(message: "Couldn't get dominent color")
+        }
+        
     }
     
     func setupImage() {
