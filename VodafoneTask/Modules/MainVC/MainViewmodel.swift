@@ -75,14 +75,7 @@ class MainViewmodel: NSObject {
     /// Use this method to know the number of the data source and the ads
     /// - Warning: The number may be greater than expected by 1 if there is more to get from backend
     func getTotalCount() -> Int {
-        let count:Int = {
-            switch photosDataSource {
-        case .network:
-            return photos.count + numberOfAds
-        case .cashed:
-            return cashedPhotos.count + numberOfAds
-        }
-        }()
+        let count = getLastIndex()
         return hasMore ? count + 1 : count
     }
     
