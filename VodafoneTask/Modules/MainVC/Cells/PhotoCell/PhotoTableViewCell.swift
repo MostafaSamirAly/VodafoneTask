@@ -11,12 +11,8 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     /// Use this Method to configure cell with photo data
+    /// - Parameter photo: photo to configure with
     func configure(with photo:Photo) {
         photoImageView.setImage(with: photo.downloadUrl)
         authorNameLabel.text = photo.author

@@ -86,12 +86,15 @@ class MainViewmodel: NSObject {
         return hasMore ? count + 1 : count
     }
     
+    
     /// Use this method to know if the indexpath is at ad location or not
+    /// - Parameter indexPath: current indexpath
     func isAd(at indexPath: IndexPath) -> Bool {
         return (indexPath.row + 1) % 6 == 0 && indexPath.row != 0
     }
     
     /// Use this method to get the appropriate photo at indexpath
+    /// - Parameter indexPath: current indexpath
     func getPhoto(at indexPath: IndexPath) -> Photo {
         switch photosDataSource {
         case .network:
