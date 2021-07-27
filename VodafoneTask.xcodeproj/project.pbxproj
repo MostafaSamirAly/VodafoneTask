@@ -35,6 +35,7 @@
 		56C349CC26AE1AE20016A783 /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */; };
 		56EC32FD26B09E5B00C6E567 /* MockApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 56EC32FC26B09E5B00C6E567 /* MockApi.json */; };
 		56EC32FF26B0A63500C6E567 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC32FE26B0A63500C6E567 /* UIImage+Ext.swift */; };
+		56EC330D26B0B76400C6E567 /* UIImageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC330C26B0B76400C6E567 /* UIImageColors.swift */; };
 		644DD567EC0492CAFBB719A7 /* Pods_VodafoneTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */; };
 		CFF94D34812A60564577A706 /* Pods_VodafoneTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		56EC32FC26B09E5B00C6E567 /* MockApi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockApi.json; sourceTree = "<group>"; };
 		56EC32FE26B0A63500C6E567 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		56EC330C26B0B76400C6E567 /* UIImageColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageColors.swift; sourceTree = "<group>"; };
 		58F2BC7EADFADFBA5FD5E03C /* Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C8378DCD827E711BFACC99FC /* Pods_VodafoneTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4121B5CD8769F0B4BDB8579 /* Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTask-VodafoneTaskUITests/Pods-VodafoneTask-VodafoneTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		56C349B726AE0F980016A783 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				56EC330C26B0B76400C6E567 /* UIImageColors.swift */,
 				56C349B826AE10A90016A783 /* UIViewController+Ext.swift */,
 				56C349BA26AE10DF0016A783 /* UIImageView+Ext.swift */,
 				5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */,
@@ -546,6 +549,7 @@
 				56C3499726ADEDC00016A783 /* RepositoryFetcher.m in Sources */,
 				56C349B226AE0B3C0016A783 /* PhotoTableViewCell.swift in Sources */,
 				56C3499D26ADEE240016A783 /* Photo.m in Sources */,
+				56EC330D26B0B76400C6E567 /* UIImageColors.swift in Sources */,
 				56C349C726AE1ABD0016A783 /* LoadMoreTableViewCell.swift in Sources */,
 				56C349A826AE08180016A783 /* MainViewmodel.swift in Sources */,
 			);
