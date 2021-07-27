@@ -8,6 +8,9 @@
 import UIKit
 
 extension UIImage {
+    
+    /// This Variables if the average color of all colors inside the image
+    /// -  Reference : - https://www.hackingwithswift.com/example-code/media/how-to-read-the-average-color-of-a-uiimage-using-ciareaaverage
     var averageColor: UIColor? {
         guard let inputImage = CIImage(image: self) else { return nil }
             let extentVector = CIVector(x: inputImage.extent.origin.x, y: inputImage.extent.origin.y, z: inputImage.extent.size.width, w: inputImage.extent.size.height)
