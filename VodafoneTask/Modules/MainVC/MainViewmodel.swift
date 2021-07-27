@@ -18,7 +18,7 @@ class MainViewmodel: NSObject {
     }
     private var photos = [Photo]() {
         didSet {
-            updateCashedMovies()
+            updateCashedPhotos()
         }
     }
     private var numberOfAds: Int {
@@ -42,6 +42,7 @@ class MainViewmodel: NSObject {
         super.init()
     }
     
+    /// Use this Method to fetch data from backend
     func getData() {
         fetcher.fetch(at: Int32(page)) { [weak self] photos in
             self?.hasMore = !photos.isEmpty
@@ -53,13 +54,15 @@ class MainViewmodel: NSObject {
         }
     }
     
+    /// Use this Method to paginate
     func loadMore() {
         if hasMore {
             page += 1
             getData()
         }
     }
-    
+     
+    /// Use this Method to get the last index of the current data source and number of ads
     func getLastIndex()-> Int {
         switch photosDataSource {
         case .network:
@@ -69,15 +72,26 @@ class MainViewmodel: NSObject {
         }
     }
     
+    /// Use this method to know the number of the data source and the ads
+    /// - Warning: The number may be greater than expected by 1 if there is more to get from backend
     func getTotalCount() -> Int {
-        let count:Int = getLastIndex()
+        let count:Int = {
+            switch photosDataSource {
+        case .network:
+            return photos.count + numberOfAds
+        case .cashed:
+            return cashedPhotos.count + numberOfAds
+        }
+        }()
         return hasMore ? count + 1 : count
     }
     
+    /// Use this method to know if the indexpath is at ad location or not
     func isAd(at indexPath: IndexPath) -> Bool {
         return (indexPath.row + 1) % 6 == 0 && indexPath.row != 0
     }
     
+    /// Use this method to get the appropriate photo at indexpath
     func getPhoto(at indexPath: IndexPath) -> Photo {
         switch photosDataSource {
         case .network:
@@ -88,7 +102,8 @@ class MainViewmodel: NSObject {
         
     }
     
-    private func updateCashedMovies() {
+    /// Use this method to update cashed photos in the coredata
+    private func updateCashedPhotos() {
         if cashedPhotos.count <  20 {
             CoreDataHelper.shared.insert(photos: photos.suffix(20))
         }

@@ -8,10 +8,4 @@
 import UIKit
 
 class AdTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
 }

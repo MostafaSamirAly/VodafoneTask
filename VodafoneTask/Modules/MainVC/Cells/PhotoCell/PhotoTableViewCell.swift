@@ -16,6 +16,7 @@ class PhotoTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    /// Use this Method to configure cell with photo data
     func configure(with photo:Photo) {
         photoImageView.setImage(with: photo.downloadUrl)
         authorNameLabel.text = photo.author
