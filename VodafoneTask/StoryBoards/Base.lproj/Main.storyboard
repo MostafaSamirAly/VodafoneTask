@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Photos-->
         <scene sceneID="TF7-ji-DIW">
             <objects>
                 <viewController id="Gfy-6V-rmU" customClass="MainViewController" customModule="VodafoneTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <constraint firstItem="dXZ-bH-gkR" firstAttribute="leading" secondItem="lbf-I3-LWO" secondAttribute="leading" id="hRa-ZW-zT4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KjZ-BQ-ll4"/>
+                    <navigationItem key="navigationItem" title="Photos" id="KjZ-BQ-ll4"/>
                     <connections>
                         <outlet property="photosTableView" destination="dXZ-bH-gkR" id="jL7-ru-40q"/>
                     </connections>
@@ -48,18 +48,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MB5-k3-Gpo">
-                                <rect key="frame" x="64" y="341" width="286" height="214.5"/>
+                                <rect key="frame" x="16" y="348" width="382" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MB5-k3-Gpo" secondAttribute="height" multiplier="1:0.75" id="fC8-ZP-J0d"/>
+                                    <constraint firstAttribute="height" constant="200" id="xZk-gp-IzF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LYo-49-dd8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MB5-k3-Gpo" firstAttribute="leading" secondItem="LYo-49-dd8" secondAttribute="leading" constant="64" id="5xJ-iX-6nd"/>
+                            <constraint firstItem="MB5-k3-Gpo" firstAttribute="leading" secondItem="LYo-49-dd8" secondAttribute="leading" constant="16" id="5xJ-iX-6nd"/>
                             <constraint firstItem="MB5-k3-Gpo" firstAttribute="centerY" secondItem="pgH-5f-PBe" secondAttribute="centerY" id="Czr-dt-yfE"/>
-                            <constraint firstItem="LYo-49-dd8" firstAttribute="trailing" secondItem="MB5-k3-Gpo" secondAttribute="trailing" constant="64" id="h1v-Zq-qzS"/>
+                            <constraint firstItem="LYo-49-dd8" firstAttribute="trailing" secondItem="MB5-k3-Gpo" secondAttribute="trailing" constant="16" id="h1v-Zq-qzS"/>
                         </constraints>
                     </view>
                     <connections>

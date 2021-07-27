@@ -16,6 +16,7 @@ class InfoVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupImage()
+        navigationItem.title = "Details Screen"
     }
     
     override func viewDidDisappear(_ animated: Bool) {
