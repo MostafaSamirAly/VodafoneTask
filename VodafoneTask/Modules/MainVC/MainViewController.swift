@@ -8,14 +8,14 @@
 import UIKit
 
 class MainViewController: DataLoadingViewController {
-    @IBOutlet private weak var photosTableView: UITableView! {
+    @IBOutlet weak var photosTableView: UITableView! {
         didSet {
             setupTableView()
         }
     }
     
-    private let viewModel = MainViewModel()
-    private let refreshControl = UIRefreshControl()
+    let viewModel = MainViewModel()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()

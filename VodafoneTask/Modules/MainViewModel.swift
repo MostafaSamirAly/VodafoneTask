@@ -13,10 +13,10 @@ enum PhotosDataSource {
 class MainViewModel: NSObject {
     private let parser: RepositoryParser
     private let fetcher: RepositoryFetcher
-    private var cachedPhotos: [Photo] {
+    var cachedPhotos: [Photo] {
         return CoreDataHelper.shared.getMoviesFromCoreData()
     }
-    private var photos = [Photo]() {
+    var photos = [Photo]() {
         didSet {
             updateCachedPhotos()
         }
