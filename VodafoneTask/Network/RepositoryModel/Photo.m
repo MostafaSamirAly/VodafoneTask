@@ -9,4 +9,10 @@
 
 @implementation Photo
 
+- (instancetype)initWithAuthor:(NSString*)author andDownloadUrl:(NSString*)downloadUrl {
+    self.downloadUrl = downloadUrl;
+    self.author = author;
+    return self;
+}
+
 @end

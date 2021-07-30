@@ -14,5 +14,4 @@ class LoadMoreTableViewCell: UITableViewCell {
         super.prepareForReuse()
         activityIndicator.startAnimating()
     }
-    
 }

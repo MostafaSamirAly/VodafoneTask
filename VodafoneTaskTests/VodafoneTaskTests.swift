@@ -15,6 +15,7 @@ class VodafoneTaskTests: XCTestCase {
     var data: Any!
     
     override func setUp() {
+        super.setUp()
         parser = RepositoryParser()
         fetcher = RepositoryFetcher(parser: parser)
         let testBundle = Bundle(for: type(of: self))
@@ -29,7 +30,7 @@ class VodafoneTaskTests: XCTestCase {
             if photos.count == 10{
                 XCTAssertEqual(photos[0].author, "Alejandro Escamilla")
                 promise.fulfill()
-            }else{
+            } else {
                 XCTFail("Response is not as Expected")
                 promise.fulfill()
             }
@@ -46,7 +47,7 @@ class VodafoneTaskTests: XCTestCase {
             if photos.count == 10 {
                 XCTAssertEqual(photos[0].author, "Alejandro Escamilla")
                 promise.fulfill()
-            }else{
+            } else {
                 XCTFail("parsed is not as Expected")
                 promise.fulfill()
             }
@@ -55,7 +56,6 @@ class VodafoneTaskTests: XCTestCase {
             promise.fulfill()
         }
         wait(for: [promise], timeout: 5)
-        
     }
 
 }

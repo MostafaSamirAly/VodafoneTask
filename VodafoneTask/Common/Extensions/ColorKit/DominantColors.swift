@@ -40,7 +40,7 @@ extension UIImage {
         case kMeansClustering
     }
     
-    /// Reoresents how precise the dominant color algorithm should be.
+    /// Represents how precise the dominant color algorithm should be.
     /// The lower the quality, the faster the algorithm.
     /// `.best` should only be reserved for very small images.
     public enum DominantColorQuality {
@@ -49,7 +49,7 @@ extension UIImage {
         case high
         case best
         
-        var prefferedImageArea: CGFloat? {
+        var preferredImageArea: CGFloat? {
             switch self {
             case .low:
                 return 1_000
@@ -79,26 +79,26 @@ extension UIImage {
         /// For example with a `.low` quality, the returned size will be much smaller.
         /// On the opposite, with a `.best` quality, the returned size will be identical to the original size.
         func targetSize(for originalSize: CGSize) -> CGSize {
-            guard let prefferedImageArea = prefferedImageArea else {
+            guard let preferredImageArea = preferredImageArea else {
                 return originalSize
             }
             
             let originalArea = originalSize.area
             
-            guard originalArea > prefferedImageArea else {
+            guard originalArea > preferredImageArea else {
                 return originalSize
             }
             
-            return originalSize.transformToFit(in: prefferedImageArea)
+            return originalSize.transformToFit(in: preferredImageArea)
         }
     }
     
     /// Attempts to computes the dominant colors of the image.
-    /// This is not the absolute dominent colors, but instead colors that are similar are groupped together.
+    /// This is not the absolute dominant colors, but instead colors that are similar are grouped together.
     /// This avoids having to deal with many shades of the same colors, which are frequent when dealing with compression artifacts (jpeg etc.).
     /// - Parameters:
     ///   - quality: The quality used to determine the dominant colors. A higher quality will yield more accurate results, but will be slower.
-    ///   - algorithm: The algorithm used to determine the dominant colors. When using a k-means algorithm (`kMeansClustering`), a `CIKMeans` CIFilter isused. Unfortunately this filter doesn't work on the simulator.
+    ///   - algorithm: The algorithm used to determine the dominant colors. When using a k-means algorithm (`kMeansClustering`), a `CIKMeans` CIFilter issued. Unfortunately this filter doesn't work on the simulator.
     /// - Returns: The dominant colors as array of `UIColor` instances. When using the `.iterative` algorithm, this array is ordered where the first color is the most dominant one.
     public func dominantColors(with quality: DominantColorQuality = .fair, algorithm: DominantColorAlgorithm = .iterative) throws -> [UIColor] {
         switch algorithm {
@@ -110,8 +110,8 @@ extension UIImage {
             
             return dominantColors
         case .kMeansClustering:
-            let dominantcolors = try kMeansClustering(with: quality)
-            return dominantcolors
+            let dominantColors = try kMeansClustering(with: quality)
+            return dominantColors
         }
     }
     
@@ -151,9 +151,9 @@ extension UIImage {
             let B: UInt8
         }
 
-        for yCoordonate in 0 ..< cgImage.height {
-            for xCoordonate in 0 ..< cgImage.width {
-                let index = (cgImage.width * yCoordonate + xCoordonate) * 4
+        for yCoordinate in 0 ..< cgImage.height {
+            for xCoordinate in 0 ..< cgImage.width {
+                let index = (cgImage.width * yCoordinate + xCoordinate) * 4
                 
                 // Let's make sure there is enough alpha.
                 guard data[index + 3] > 150 else { continue }
@@ -293,5 +293,4 @@ extension UIImage {
         
         return dominantColors
     }
-    
 }

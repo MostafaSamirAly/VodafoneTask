@@ -7,5 +7,4 @@
 
 import UIKit
 
-class AdTableViewCell: UITableViewCell {
-}
+class AdTableViewCell: UITableViewCell { }

@@ -9,13 +9,12 @@ import SDWebImage
 
 class InfoVC: UIViewController {
     
-    @IBOutlet weak var photoImageView: UIImageView!
-    let viewmodel = InfoViewmodel()
+    @IBOutlet private weak var photoImageView: UIImageView!
+    var viewModel:MainViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setupImage()
+        loadImage()
         navigationItem.title = "Details Screen"
     }
     
@@ -25,17 +24,18 @@ class InfoVC: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        do {
-            self.view.backgroundColor = try photoImageView.image?.dominantColors().first
-        } catch {
-            showAlert(message: "Couldn't get dominent color")
+        if let image = photoImageView.image {
+            do {
+                self.view.backgroundColor = try image.dominantColors().first
+            } catch {
+                showAlert(message: "Couldn't get dominant color")
+            }
         }
-        
     }
     
-    func setupImage() {
+    func loadImage() {
         photoImageView.addObserver(self, forKeyPath: #keyPath(UIImageView.image), options: .new, context: nil)
-        if let imageUrl = viewmodel.photo?.downloadUrl {
+        if let imageUrl = viewModel?.selectedPhoto?.downloadUrl {
             photoImageView.setImage(with: imageUrl)
         }
     }

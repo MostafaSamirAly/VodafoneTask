@@ -11,15 +11,12 @@
 
 - (void)parseRepositories:(id)data withSuccess:(void (^)(NSArray<Photo *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion {
     
-    NSArray *fetchedArr = data;
+    NSArray *fetchedArray = data;
     NSMutableArray<Photo *> *repos = [[NSMutableArray alloc] init];
-    for (int i = 0 ; i < fetchedArr.count ; i++ ){
+    for (int i = 0 ; i < fetchedArray.count ; i++ ){
         Photo *repo = [[Photo alloc] init];
-        repo.author = [fetchedArr objectAtIndex:i][@"author"];
-//        repo.width = [fetchedArr objectAtIndex:i][@"width"];
-//        repo.height = [fetchedArr objectAtIndex:i][@"height"];
-//        repo.url = [fetchedArr objectAtIndex:i][@"url"];
-        repo.downloadUrl = [fetchedArr objectAtIndex:i][@"download_url"];
+        repo.author = [fetchedArray objectAtIndex:i][@"author"];
+        repo.downloadUrl = [fetchedArray objectAtIndex:i][@"download_url"];
         [repos addObject:repo];
     }
     successCompletion(repos);

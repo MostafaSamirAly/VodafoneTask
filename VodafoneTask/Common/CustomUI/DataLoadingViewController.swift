@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DataLoadingVC: UIViewController {
-    var containerView:UIView!
+class DataLoadingViewController: UIViewController {
+    var containerView: UIView!
     
-    func showLoadingView(){
+    func showLoadingView() {
         containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
         NSLayoutConstraint.activate([
@@ -20,20 +20,20 @@ class DataLoadingVC: UIViewController {
         containerView.backgroundColor = .white
         containerView.alpha = 0.3
         
-        let activivtyIndicator = UIActivityIndicatorView(style: .medium)
-        activivtyIndicator.color = .gray
-        containerView.addSubview(activivtyIndicator)
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.color = .gray
+        containerView.addSubview(activityIndicator)
         
-        activivtyIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            activivtyIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            activivtyIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-        activivtyIndicator.startAnimating()
+        activityIndicator.startAnimating()
     }
     
-    func dismissLoadingView(){
+    func dismissLoadingView() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             if let _ = self.containerView {

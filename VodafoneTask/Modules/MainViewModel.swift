@@ -8,33 +8,34 @@
 import Foundation
 enum PhotosDataSource {
     case network
-    case cashed
+    case cache
 }
-class MainViewmodel: NSObject {
-    private let parser:RepositoryParser
-    private let fetcher:RepositoryFetcher
-    private var cashedPhotos:[Photo] {
+class MainViewModel: NSObject {
+    private let parser: RepositoryParser
+    private let fetcher: RepositoryFetcher
+    private var cachedPhotos: [Photo] {
         return CoreDataHelper.shared.getMoviesFromCoreData()
     }
     private var photos = [Photo]() {
         didSet {
-            updateCashedPhotos()
+            updateCachedPhotos()
         }
     }
-    private var numberOfAds: Int {
+    private(set) var selectedPhoto: Photo?
+    private var adsNumber: Int {
         switch photosDataSource {
         case .network:
             return photos.count / 5
-        case .cashed:
-            return cashedPhotos.count / 5
+        case .cache:
+            return cachedPhotos.count / 5
         }
     }
     private var page = 1
     private var hasMore = false
     private var photosDataSource:PhotosDataSource = .network
     
-    var successCompletion:(()->())?
-    var errorCompletion:((Error)->())?
+    var successCompletion: (() -> Void )?
+    var errorCompletion: ((Error) -> Void )?
     
     override init() {
         parser = RepositoryParser()
@@ -43,14 +44,17 @@ class MainViewmodel: NSObject {
     }
     
     /// Use this Method to fetch data from backend
-    func getData() {
+    func fetchData() {
         fetcher.fetch(at: Int32(page)) { [weak self] photos in
             self?.hasMore = !photos.isEmpty
             self?.photos.append(contentsOf: photos)
             self?.successCompletion?()
-        } error: { error in
-            self.photosDataSource = .cashed
-            self.errorCompletion?(error)
+        } error: { [weak self] error in
+            self?.hasMore = false
+            if self?.photos.count == 0 {
+                self?.photosDataSource = .cache
+            }
+            self?.errorCompletion?(error)
         }
     }
     
@@ -58,49 +62,62 @@ class MainViewmodel: NSObject {
     func loadMore() {
         if hasMore {
             page += 1
-            getData()
+            fetchData()
         }
+    }
+    
+    /// Use this function to refresh fetched data
+    func refresh() {
+        hasMore = false
+        photos.removeAll()
+        photosDataSource = .network
+        page = 1
+        fetchData()
     }
      
     /// Use this Method to get the last index of the current data source and number of ads
-    func getLastIndex()-> Int {
+    func lastIndex()-> Int {
         switch photosDataSource {
         case .network:
-            return photos.count + numberOfAds
-        case .cashed:
-            return cashedPhotos.count + numberOfAds
+            return photos.count + adsNumber
+        case .cache:
+            return cachedPhotos.count + adsNumber
         }
     }
     
     /// Use this method to know the number of the data source and the ads
     /// - Warning: The number may be greater than expected by 1 if there is more to get from backend
-    func getTotalCount() -> Int {
-        let count = getLastIndex()
+    func totalCount() -> Int {
+        let count = lastIndex()
         return hasMore ? count + 1 : count
     }
     
     
-    /// Use this method to know if the indexpath is at ad location or not
-    /// - Parameter indexPath: current indexpath
+    /// Use this method to know if the indexPath is at ad location or not
+    /// - Parameter indexPath: current indexPath
     func isAd(at indexPath: IndexPath) -> Bool {
         return (indexPath.row + 1) % 6 == 0 && indexPath.row != 0
     }
     
-    /// Use this method to get the appropriate photo at indexpath
-    /// - Parameter indexPath: current indexpath
-    func getPhoto(at indexPath: IndexPath) -> Photo {
+    /// Use this method to get the appropriate photo at indexPath
+    /// - Parameter indexPath: current indexPath
+    func photo(at indexPath: IndexPath) -> Photo {
         switch photosDataSource {
         case .network:
             return photos[indexPath.row - (indexPath.row / 6)]
-        case .cashed:
-            return cashedPhotos[indexPath.row - (indexPath.row / 6)]
+        case .cache:
+            return cachedPhotos[indexPath.row - (indexPath.row / 6)]
         }
         
     }
     
-    /// Use this method to update cashed photos in the coredata
-    private func updateCashedPhotos() {
-        if cashedPhotos.count <  20 {
+    func setSelectedPhoto(at indexPath: IndexPath) {
+        selectedPhoto = photo(at: indexPath)
+    }
+    
+    /// Use this method to update cashed photos in the core data
+    private func updateCachedPhotos() {
+        if cachedPhotos.count <  20 {
             CoreDataHelper.shared.insert(photos: photos.suffix(20))
         }
     }

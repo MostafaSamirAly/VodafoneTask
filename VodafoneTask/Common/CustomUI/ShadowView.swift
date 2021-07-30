@@ -16,10 +16,10 @@ class ShadowCornerView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupview()
+        setupView()
     }
     
-    private func setupview() {
+    private func setupView() {
         self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
         self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor

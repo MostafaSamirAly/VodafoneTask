@@ -7,51 +7,71 @@
 
 import UIKit
 
-class MainViewController: DataLoadingVC {
-    private let viewmodel = MainViewmodel()
-    @IBOutlet weak var photosTableView: UITableView!
+class MainViewController: DataLoadingViewController {
+    @IBOutlet private weak var photosTableView: UITableView! {
+        didSet {
+            setupTableView()
+        }
+    }
+    
+    private let viewModel = MainViewModel()
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         setupViewmodel()
+        setupRefreshControl()
     }
-    
-    private func setupViewmodel() {
-        viewmodel.errorCompletion = { [weak self] error in
+}
+
+fileprivate extension MainViewController {
+    func setupViewmodel() {
+        viewModel.errorCompletion = { [weak self] error in
             self?.dismissLoadingView()
             self?.showAlert(message: error.localizedDescription)
             DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
                 self?.photosTableView.reloadData()
             }
         }
-        
-        viewmodel.successCompletion = { [weak self] in
+        viewModel.successCompletion = { [weak self] in
             self?.dismissLoadingView()
             DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
                 self?.photosTableView.reloadData()
             }
         }
-        
         showLoadingView()
-        viewmodel.getData()
+        viewModel.fetchData()
     }
     
-    private func setupTableView() {
+    func setupTableView() {
         photosTableView.delegate = self
         photosTableView.dataSource = self
+        photosTableView.prefetchDataSource = self
         photosTableView.register(UINib(nibName: String(describing: PhotoTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PhotoTableViewCell.self))
         photosTableView.register(UINib(nibName: String(describing: AdTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: AdTableViewCell.self))
         photosTableView.register(UINib(nibName: String(describing: LoadMoreTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: LoadMoreTableViewCell.self))
+    }
+    
+    func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        photosTableView.addSubview(refreshControl)
+    }
+    
+    @objc private func refresh(_ sender: AnyObject) {
+        refreshControl.beginRefreshing()
+        viewModel.refresh()
     }
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !viewmodel.isAd(at: indexPath),
-           indexPath.row != (viewmodel.getLastIndex()) {
+        if !viewModel.isAd(at: indexPath),
+           indexPath.row != (viewModel.lastIndex()) {
             if let infoVC = storyboard?.instantiateViewController(identifier: "InfoVC") as? InfoVC {
-                infoVC.viewmodel.photo = viewmodel.getPhoto(at: indexPath)
+                viewModel.setSelectedPhoto(at: indexPath)
+                infoVC.viewModel = viewModel
                 pushCrossDissolve(viewController: infoVC)
             }
         }
@@ -60,28 +80,37 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewmodel.getTotalCount()
+        let count = viewModel.totalCount()
+        if count == 0 {
+            tableView.setEmptyView(title: "", message: "No Photos available")
+        }else {
+            tableView.resetTableView()
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == viewmodel.getLastIndex() {
+        if indexPath.row == viewModel.lastIndex() {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: LoadMoreTableViewCell.self),for: indexPath) as? LoadMoreTableViewCell else { return UITableViewCell() }
             return cell
         }else {
-            if viewmodel.isAd(at: indexPath) {
+            if viewModel.isAd(at: indexPath) {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AdTableViewCell.self),for: indexPath) as? AdTableViewCell else { return UITableViewCell() }
                 return cell
             }else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PhotoTableViewCell.self),for: indexPath) as? PhotoTableViewCell else { return UITableViewCell() }
-                cell.configure(with: viewmodel.getPhoto(at: indexPath))
+                cell.configure(with: viewModel.photo(at: indexPath))
                 return cell
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let _ = cell as? LoadMoreTableViewCell {
-            viewmodel.loadMore()
+}
+
+extension MainViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if let indexPath = indexPaths.last,
+           indexPath.row == viewModel.lastIndex() {
+            viewModel.loadMore()
         }
     }
 }

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString  *author;
 @property NSString  *downloadUrl;
 
+- (instancetype)initWithAuthor:(NSString*)author andDownloadUrl:(NSString*)downloadUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

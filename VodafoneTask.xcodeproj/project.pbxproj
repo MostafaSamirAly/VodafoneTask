@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5620FD1C26B2150000285C34 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620FD1B26B2150000285C34 /* UITableView+Ext.swift */; };
 		5657C58F26AF33DF000B0602 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */; };
 		5657C59526AF344F000B0602 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59426AF344F000B0602 /* InfoVC.swift */; };
-		5657C59726AF346E000B0602 /* InfoViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59626AF346E000B0602 /* InfoViewmodel.swift */; };
 		5657C59A26AF424D000B0602 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657C59926AF424D000B0602 /* CoreDataManager.swift */; };
 		56C3495B26ADED690016A783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3495A26ADED690016A783 /* AppDelegate.swift */; };
 		56C3495D26ADED690016A783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3495C26ADED690016A783 /* SceneDelegate.swift */; };
@@ -21,21 +21,19 @@
 		56C3499726ADEDC00016A783 /* RepositoryFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3498F26ADEDC00016A783 /* RepositoryFetcher.m */; };
 		56C3499826ADEDC00016A783 /* RepositoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3499326ADEDC00016A783 /* RepositoryParser.m */; };
 		56C3499D26ADEE240016A783 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3499C26ADEE240016A783 /* Photo.m */; };
-		56C349A826AE08180016A783 /* MainViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349A726AE08180016A783 /* MainViewmodel.swift */; };
+		56C349A826AE08180016A783 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349A726AE08180016A783 /* MainViewModel.swift */; };
 		56C349B226AE0B3C0016A783 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349B026AE0B3C0016A783 /* PhotoTableViewCell.swift */; };
 		56C349B326AE0B3C0016A783 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349B126AE0B3C0016A783 /* PhotoTableViewCell.xib */; };
 		56C349B626AE0B9A0016A783 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349B526AE0B9A0016A783 /* ShadowView.swift */; };
 		56C349B926AE10A90016A783 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349B826AE10A90016A783 /* UIViewController+Ext.swift */; };
 		56C349BB26AE10DF0016A783 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349BA26AE10DF0016A783 /* UIImageView+Ext.swift */; };
-		56C349BF26AE11FA0016A783 /* DataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349BE26AE11FA0016A783 /* DataLoadingVC.swift */; };
+		56C349BF26AE11FA0016A783 /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349BE26AE11FA0016A783 /* DataLoadingViewController.swift */; };
 		56C349C126AE12AF0016A783 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349C026AE12AF0016A783 /* MainViewController.swift */; };
 		56C349C726AE1ABD0016A783 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349C526AE1ABD0016A783 /* LoadMoreTableViewCell.swift */; };
 		56C349C826AE1ABD0016A783 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349C626AE1ABD0016A783 /* LoadMoreTableViewCell.xib */; };
 		56C349CB26AE1AE20016A783 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C349C926AE1AE20016A783 /* AdTableViewCell.swift */; };
 		56C349CC26AE1AE20016A783 /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */; };
 		56EC32FD26B09E5B00C6E567 /* MockApi.json in Resources */ = {isa = PBXBuildFile; fileRef = 56EC32FC26B09E5B00C6E567 /* MockApi.json */; };
-		56EC32FF26B0A63500C6E567 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC32FE26B0A63500C6E567 /* UIImage+Ext.swift */; };
-		56EC330D26B0B76400C6E567 /* UIImageColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC330C26B0B76400C6E567 /* UIImageColors.swift */; };
 		56EC331526B0B8FD00C6E567 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC331026B0B8FC00C6E567 /* CGFloatExtensions.swift */; };
 		56EC331626B0B8FD00C6E567 /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC331126B0B8FC00C6E567 /* CGSizeExtensions.swift */; };
 		56EC331726B0B8FD00C6E567 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC331226B0B8FC00C6E567 /* UIImageExtensions.swift */; };
@@ -65,9 +63,9 @@
 		3BF9757BCC751F119E177496 /* Pods_VodafoneTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VodafoneTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B553A32F5356FF7B0F9858 /* Pods-VodafoneTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask.release.xcconfig"; path = "Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask.release.xcconfig"; sourceTree = "<group>"; };
 		526B365F9B9729A3BF167A81 /* Pods-VodafoneTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VodafoneTask.debug.xcconfig"; path = "Target Support Files/Pods-VodafoneTask/Pods-VodafoneTask.debug.xcconfig"; sourceTree = "<group>"; };
+		5620FD1B26B2150000285C34 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		5657C59426AF344F000B0602 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
-		5657C59626AF346E000B0602 /* InfoViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewmodel.swift; sourceTree = "<group>"; };
 		5657C59926AF424D000B0602 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		56C3495726ADED690016A783 /* VodafoneTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VodafoneTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C3495A26ADED690016A783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,21 +87,19 @@
 		56C3499B26ADEE240016A783 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		56C3499C26ADEE240016A783 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		56C3499F26ADF58C0016A783 /* VodafoneTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VodafoneTask-Bridging-Header.h"; sourceTree = "<group>"; };
-		56C349A726AE08180016A783 /* MainViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewmodel.swift; sourceTree = "<group>"; };
+		56C349A726AE08180016A783 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		56C349B026AE0B3C0016A783 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		56C349B126AE0B3C0016A783 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		56C349B526AE0B9A0016A783 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		56C349B826AE10A90016A783 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		56C349BA26AE10DF0016A783 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		56C349BE26AE11FA0016A783 /* DataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingVC.swift; sourceTree = "<group>"; };
+		56C349BE26AE11FA0016A783 /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 		56C349C026AE12AF0016A783 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		56C349C526AE1ABD0016A783 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
 		56C349C626AE1ABD0016A783 /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
 		56C349C926AE1AE20016A783 /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		56C349CA26AE1AE20016A783 /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		56EC32FC26B09E5B00C6E567 /* MockApi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockApi.json; sourceTree = "<group>"; };
-		56EC32FE26B0A63500C6E567 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
-		56EC330C26B0B76400C6E567 /* UIImageColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageColors.swift; sourceTree = "<group>"; };
 		56EC331026B0B8FC00C6E567 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
 		56EC331126B0B8FC00C6E567 /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 		56EC331226B0B8FC00C6E567 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -251,6 +247,7 @@
 		56C349A026AE07310016A783 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56C349A726AE08180016A783 /* MainViewModel.swift */,
 				56C349A326AE076A0016A783 /* MainVC */,
 				56C349A426AE07720016A783 /* InfoVC */,
 			);
@@ -279,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				56C349AF26AE0B250016A783 /* Cells */,
-				56C349A726AE08180016A783 /* MainViewmodel.swift */,
 				56C349C026AE12AF0016A783 /* MainViewController.swift */,
 			);
 			path = MainVC;
@@ -288,7 +284,6 @@
 		56C349A426AE07720016A783 /* InfoVC */ = {
 			isa = PBXGroup;
 			children = (
-				5657C59626AF346E000B0602 /* InfoViewmodel.swift */,
 				5657C59426AF344F000B0602 /* InfoVC.swift */,
 			);
 			path = InfoVC;
@@ -318,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				56C349B526AE0B9A0016A783 /* ShadowView.swift */,
-				56C349BE26AE11FA0016A783 /* DataLoadingVC.swift */,
+				56C349BE26AE11FA0016A783 /* DataLoadingViewController.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -327,11 +322,10 @@
 			isa = PBXGroup;
 			children = (
 				56EC330E26B0B8AD00C6E567 /* ColorKit */,
-				56EC330C26B0B76400C6E567 /* UIImageColors.swift */,
 				56C349B826AE10A90016A783 /* UIViewController+Ext.swift */,
 				56C349BA26AE10DF0016A783 /* UIImageView+Ext.swift */,
 				5657C58E26AF33DF000B0602 /* UINavigationController+Ext.swift */,
-				56EC32FE26B0A63500C6E567 /* UIImage+Ext.swift */,
+				5620FD1B26B2150000285C34 /* UITableView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -578,10 +572,9 @@
 				56EC331726B0B8FD00C6E567 /* UIImageExtensions.swift in Sources */,
 				5657C59A26AF424D000B0602 /* CoreDataManager.swift in Sources */,
 				56C3495B26ADED690016A783 /* AppDelegate.swift in Sources */,
-				56EC32FF26B0A63500C6E567 /* UIImage+Ext.swift in Sources */,
 				56C3496526ADED690016A783 /* VodafoneTask.xcdatamodeld in Sources */,
 				56EC331926B0B8FD00C6E567 /* DominantColors.swift in Sources */,
-				56C349BF26AE11FA0016A783 /* DataLoadingVC.swift in Sources */,
+				56C349BF26AE11FA0016A783 /* DataLoadingViewController.swift in Sources */,
 				56C349B926AE10A90016A783 /* UIViewController+Ext.swift in Sources */,
 				56EC331626B0B8FD00C6E567 /* CGSizeExtensions.swift in Sources */,
 				56C3495D26ADED690016A783 /* SceneDelegate.swift in Sources */,
@@ -589,16 +582,15 @@
 				56C349C126AE12AF0016A783 /* MainViewController.swift in Sources */,
 				56C349B626AE0B9A0016A783 /* ShadowView.swift in Sources */,
 				56C349CB26AE1AE20016A783 /* AdTableViewCell.swift in Sources */,
-				5657C59726AF346E000B0602 /* InfoViewmodel.swift in Sources */,
 				56C3499726ADEDC00016A783 /* RepositoryFetcher.m in Sources */,
 				56C349B226AE0B3C0016A783 /* PhotoTableViewCell.swift in Sources */,
 				56C3499D26ADEE240016A783 /* Photo.m in Sources */,
-				56EC330D26B0B76400C6E567 /* UIImageColors.swift in Sources */,
 				56C349C726AE1ABD0016A783 /* LoadMoreTableViewCell.swift in Sources */,
 				56EC331526B0B8FD00C6E567 /* CGFloatExtensions.swift in Sources */,
 				56EC331F26B0BA0000C6E567 /* Lab.swift in Sources */,
 				56EC331B26B0B95000C6E567 /* Difference.swift in Sources */,
-				56C349A826AE08180016A783 /* MainViewmodel.swift in Sources */,
+				5620FD1C26B2150000285C34 /* UITableView+Ext.swift in Sources */,
+				56C349A826AE08180016A783 /* MainViewModel.swift in Sources */,
 				56EC331E26B0BA0000C6E567 /* XYZ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ struct RGB {
 
 extension UIColor {
     
-    // MARK: - Pulic
+    // MARK: - Puplic
     
     /// The red (R) channel of the RGB color space as a value from 0.0 to 1.0.
     public var red: CGFloat {

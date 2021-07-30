@@ -8,12 +8,12 @@
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet private weak var photoImageView: UIImageView!
+    @IBOutlet private weak var authorNameLabel: UILabel!
     
     /// Use this Method to configure cell with photo data
     /// - Parameter photo: photo to configure with
-    func configure(with photo:Photo) {
+    func configure(with photo: Photo) {
         photoImageView.setImage(with: photo.downloadUrl)
         authorNameLabel.text = photo.author
     }
