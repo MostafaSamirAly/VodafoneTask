@@ -5,13 +5,13 @@
 //  Created by Mostafa Samir on 25/07/2021.
 //
 
-#import "RepositoryFetcher.h"
+#import "Fetcher.h"
 
 
-@implementation RepositoryFetcher
+@implementation Fetcher
 
 
-- (instancetype)initWithParser:(id<RepositoryParserProtocol>)parser{
+- (instancetype)initWithParser:(id<ParserProtocol>)parser{
     self.parser = parser;
     return self;
 }
@@ -28,7 +28,7 @@
             errorCompletion(error);
         } else {
 
-            [self.parser parseRepositories:responseObject withSuccess:successCompletion error:errorCompletion];
+            [self.parser parseData:responseObject withSuccess:successCompletion error:errorCompletion];
         }
     }];
     [dataTask resume];

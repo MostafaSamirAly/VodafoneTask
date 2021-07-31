@@ -6,11 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RepositoryParserProtocol.h"
+#import "ParserProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RepositoryParser : NSObject<RepositoryParserProtocol>
+@interface Parser : NSObject<ParserProtocol>
 
 @end
 

@@ -29,30 +29,28 @@ class MainViewControllerTest: XCTestCase {
         super.tearDown()
     }
 
-    func test_outlets_shouldBeConnected() {
+    func testOutletsShouldBeConnected() {
         XCTAssertNotNil(mainViewController?.photosTableView, "tableView")
     }
 
-    func test_tableViewDelegates_shouldBeConnected() {
+    func testTableViewDelegatesShouldBeConnected() {
         mainViewController?.photosTableView.reloadData()
         XCTAssertNotNil(mainViewController?.photosTableView.dataSource, "dataSource")
         XCTAssertNotNil(mainViewController?.photosTableView.delegate, "delegate")
     }
 
-    func test_navigationTitle() {
+    func testNavigationTitle() {
         XCTAssertEqual(mainViewController?.navigationItem.title, "Photos")
     }
 
-    func test_viewModel_shouldBeConnected() {
+    func testViewModelShouldBeConnected() {
         XCTAssertNotNil(mainViewController?.viewModel)
         XCTAssertNotNil(mainViewController?.viewModel.photos)
         XCTAssertNotNil(mainViewController?.viewModel.cachedPhotos)
     }
     
-    func test_handleRefresh() {
-        
+    func testHandleRefresh() {
         mainViewController?.viewModel.refresh()
         XCTAssertEqual(mainViewController?.viewModel.photos.count, 0)
-        
     }
 }

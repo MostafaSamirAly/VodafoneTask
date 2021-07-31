@@ -9,7 +9,7 @@
 #import "Photo.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol RepositoryFetcherProtocol <NSObject>
+@protocol FetcherProtocol <NSObject>
 - (void)fetchAt:(int)page success:(void (^)(NSArray<Photo *> *repos)) successCompletion error:(void (^)(NSError *error)) errorCompletion;
 @end
 

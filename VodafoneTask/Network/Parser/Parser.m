@@ -5,11 +5,11 @@
 //  Created by Mostafa Samir on 25/07/2021.
 //
 
-#import "RepositoryParser.h"
+#import "Parser.h"
 
-@implementation RepositoryParser
+@implementation Parser
 
-- (void)parseRepositories:(id)data withSuccess:(void (^)(NSArray<Photo *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion {
+- (void)parseData:(id)data withSuccess:(void (^)(NSArray<Photo *> *repos))successCompletion error:(void (^)(NSError *error))errorCompletion {
     
     NSArray *fetchedArray = data;
     NSMutableArray<Photo *> *repos = [[NSMutableArray alloc] init];

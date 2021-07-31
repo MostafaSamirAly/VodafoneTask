@@ -9,8 +9,8 @@
 #define VodafoneTask_Bridging_Header_h
 
 #import "Photo.h"
-#import "RepositoryFetcher.h"
-#import "RepositoryParser.h"
+#import "Fetcher.h"
+#import "Parser.h"
 #import "AFNetworking.h"
 
 #endif /* VodafoneTask_Bridging_Header_h */

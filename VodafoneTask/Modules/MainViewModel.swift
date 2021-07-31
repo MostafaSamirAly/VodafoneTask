@@ -11,8 +11,8 @@ enum PhotosDataSource {
     case cache
 }
 class MainViewModel: NSObject {
-    private let parser: RepositoryParser
-    private let fetcher: RepositoryFetcher
+    private let parser: Parser
+    private let fetcher: Fetcher
     var cachedPhotos: [Photo] {
         return CoreDataHelper.shared.getMoviesFromCoreData()
     }
@@ -38,8 +38,8 @@ class MainViewModel: NSObject {
     var errorCompletion: ((Error) -> Void )?
     
     override init() {
-        parser = RepositoryParser()
-        fetcher = RepositoryFetcher(parser: parser)
+        parser = Parser()
+        fetcher = Fetcher(parser: parser)
         super.init()
     }
     
@@ -108,7 +108,6 @@ class MainViewModel: NSObject {
         case .cache:
             return cachedPhotos[indexPath.row - (indexPath.row / 6)]
         }
-        
     }
     
     func setSelectedPhoto(at indexPath: IndexPath) {
