@@ -53,16 +53,30 @@
                                     <constraint firstAttribute="height" constant="200" id="xZk-gp-IzF"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVE-r2-OE0">
+                                <rect key="frame" x="364" y="74" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="8zL-yr-neQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="e4o-OU-fzg"/>
+                                </constraints>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="kBK-XQ-roZ" eventType="touchUpInside" id="Cps-67-2CQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LYo-49-dd8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MB5-k3-Gpo" firstAttribute="leading" secondItem="LYo-49-dd8" secondAttribute="leading" constant="16" id="5xJ-iX-6nd"/>
                             <constraint firstItem="MB5-k3-Gpo" firstAttribute="centerY" secondItem="pgH-5f-PBe" secondAttribute="centerY" id="Czr-dt-yfE"/>
+                            <constraint firstItem="LYo-49-dd8" firstAttribute="trailing" secondItem="OVE-r2-OE0" secondAttribute="trailing" constant="20" id="LZx-uV-Fj6"/>
                             <constraint firstItem="LYo-49-dd8" firstAttribute="trailing" secondItem="MB5-k3-Gpo" secondAttribute="trailing" constant="16" id="h1v-Zq-qzS"/>
+                            <constraint firstItem="OVE-r2-OE0" firstAttribute="top" secondItem="LYo-49-dd8" secondAttribute="top" constant="30" id="j5z-Ml-uCq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="OVE-r2-OE0" id="5Dz-uF-a6R"/>
                         <outlet property="photoImageView" destination="MB5-k3-Gpo" id="rnM-6w-dEQ"/>
                     </connections>
                 </viewController>
@@ -73,6 +87,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OQN-8v-CPQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3A-hg-xIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rz7-Ah-vEU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZTm-BH-eNp">
@@ -84,7 +99,6 @@
                         <segue destination="Gfy-6V-rmU" kind="relationship" relationship="rootViewController" id="Yck-pZ-mZX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L3A-hg-xIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562.31884057971024" y="14.732142857142856"/>
         </scene>

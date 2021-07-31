@@ -9,6 +9,7 @@ import SDWebImage
 
 class InfoVC: UIViewController {
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet private weak var photoImageView: UIImageView!
     var viewModel:MainViewModel?
     
@@ -26,7 +27,9 @@ class InfoVC: UIViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let image = photoImageView.image {
             do {
-                self.view.backgroundColor = try image.dominantColors().first
+                let colors = try image.dominantColors()
+                self.view.backgroundColor = colors.first
+                self.closeButton.tintColor = colors.last
             } catch {
                 showAlert(message: "Couldn't get dominant color")
             }
@@ -39,4 +42,9 @@ class InfoVC: UIViewController {
             photoImageView.setImage(with: imageUrl)
         }
     }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

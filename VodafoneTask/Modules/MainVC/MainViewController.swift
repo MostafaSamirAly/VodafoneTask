@@ -16,6 +16,7 @@ class MainViewController: DataLoadingViewController {
     
     let viewModel = MainViewModel()
     let refreshControl = UIRefreshControl()
+    let transition = TransitionAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +73,8 @@ extension MainViewController: UITableViewDelegate {
             if let infoVC = storyboard?.instantiateViewController(identifier: "InfoVC") as? InfoVC {
                 viewModel.setSelectedPhoto(at: indexPath)
                 infoVC.viewModel = viewModel
-                pushCrossDissolve(viewController: infoVC)
+                infoVC.transitioningDelegate = self
+                present(infoVC, animated: true, completion: nil)
             }
         }
     }
